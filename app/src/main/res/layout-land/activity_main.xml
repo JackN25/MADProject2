@@ -12,32 +12,33 @@
         android:id="@+id/billTotalHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:text="Bill Total"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tipPercentageHeader"
+        app:layout_constraintEnd_toEndOf="@+id/tipPercentageHeader"
         app:layout_constraintTop_toTopOf="parent" />
 
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="154dp"
         android:layout_height="26dp"
+        android:layout_marginStart="20dp"
         android:max="35"
         android:min="0"
         app:layout_constraintBottom_toBottomOf="@+id/tipPercentageHeader"
-        app:layout_constraintEnd_toStartOf="@+id/percentageDisplay"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tipPercentageHeader"
-        app:layout_constraintTop_toTopOf="@+id/tipPercentageHeader" />
+        app:layout_constraintTop_toTopOf="@+id/tipPercentageHeader"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tipPercentageHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="20dp"
         android:text="Tip Percentage"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tipStatusHeader"
         app:layout_constraintEnd_toEndOf="@+id/billTotalHeader"
         app:layout_constraintEnd_toStartOf="@+id/seekBar"
         app:layout_constraintHorizontal_bias="0.5"
@@ -48,9 +49,9 @@
         android:id="@+id/tipStatusHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="Your tip is"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tipPercentageHeader"
         app:layout_constraintTop_toBottomOf="@+id/tipPercentageHeader" />
 
@@ -58,23 +59,40 @@
         android:id="@+id/tipAmountHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="44dp"
         android:text="Tip"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/tipStatusHeader"
-        app:layout_constraintTop_toBottomOf="@+id/tipStatusHeader" />
+        app:layout_constraintBottom_toTopOf="@+id/percentageDisplay"
+        app:layout_constraintStart_toEndOf="@+id/percentageDisplay"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/grandTotalHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grand Total"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tipAmountHeader"
+        app:layout_constraintTop_toTopOf="@+id/percentageDisplay"
+        app:layout_constraintVertical_bias="0.381" />
 
     <EditText
         android:id="@+id/billTotal"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:layout_marginStart="20dp"
         android:ems="10"
         android:hint="Amount"
         android:inputType="number|numberDecimal"
         app:layout_constraintBottom_toBottomOf="@+id/billTotalHeader"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toEndOf="@+id/billTotalHeader"
-        app:layout_constraintTop_toTopOf="@+id/billTotalHeader" />
+        app:layout_constraintTop_toTopOf="@+id/billTotalHeader"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tipStatus"
@@ -87,16 +105,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/tipStatusHeader"
         app:layout_constraintStart_toEndOf="@+id/tipStatusHeader"
         app:layout_constraintTop_toTopOf="@+id/tipStatusHeader" />
-
-    <TextView
-        android:id="@+id/grandTotalHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Grand Total"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/tipAmountHeader"
-        app:layout_constraintTop_toBottomOf="@+id/tipAmountHeader" />
 
     <TextView
         android:id="@+id/tipAmount"
@@ -122,9 +130,8 @@
         android:id="@+id/percentageDisplay"
         android:layout_width="200px"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/seekBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/seekBar"
         app:layout_constraintTop_toTopOf="@+id/seekBar" />
 
